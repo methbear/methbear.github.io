@@ -33,7 +33,7 @@
     </head>
     <body>
         <div align="center">
-            <h1>What should Tora do?</h1>
+            <h1>Subathon Punishment Wheel</h1>
             <table cellpadding="0" cellspacing="0" border="0">
                 <tr>
                     <td>
@@ -54,20 +54,65 @@
         <script>
             // Create new wheel object specifying the parameters at creation time.
             let theWheel = new Winwheel({
-                'numSegments'  : 2,     // Specify number of segments.
+                'numSegments'  : 11,     // Specify number of segments.
                 'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
-                'textFontSize' : 24,    // Set font size as desired.
+                'textFontSize' : 16,    // Set font size as desired.
                 'segments'     :        // Define segments including colour and text.
                 [
                     {
-                        'fillStyle' : '#05C3DD',
-                        'text'      : 'Debut',
-                        'size'      : winwheelPercentToDegrees(10),
+                        'fillStyle' : '#FF3D00', //cheaty wedge
+                        'text'      : 'End Stream',
+                        'size'      : winwheelPercentToDegrees(9.0909),
                     },
                     {
-                        'fillStyle' : '#00873E',
-                        'text'      : 'Admit I\'m Cute',
-                        'size'      : winwheelPercentToDegrees(90),
+                        'fillStyle' : '#42A5F5',
+                        'text'      : 'Write Tweet',
+                        'size'      : winwheelPercentToDegrees(9.0909),
+                    },
+                    {
+                        'fillStyle' : '#9575CD',
+                        'text'      : 'TikTok Audio',
+                        'size'      : winwheelPercentToDegrees(9.0909),
+                    },
+                    {
+                        'fillStyle' : '#9CCC65',
+                        'text'      : 'Design DIXPR Card',
+                        'size'      : winwheelPercentToDegrees(9.0909),
+                    },
+                    {
+                        'fillStyle' : '#FF8A65',
+                        'text'      : 'Sing-A-Long',
+                        'size'      : winwheelPercentToDegrees(9.0909),
+                    },
+                    {
+                        'fillStyle' : '#FFF176',
+                        'text'      : 'Muse Dash Song',
+                        'size'      : winwheelPercentToDegrees(9.0909),
+                    },
+                    {
+                        'fillStyle' : '#42A5F5',
+                        'text'      : 'No Speaking for 5 mins',
+                        'size'      : winwheelPercentToDegrees(9.0909),
+                    },
+                    {
+                        'fillStyle' : '#9575CD',
+                        'text'      : 'Ban word/phrase',
+                        'size'      : winwheelPercentToDegrees(9.0909),
+                    },
+                    {
+                        'fillStyle' : '#9CCC65',
+                        'text'      : 'Dress up Tora',
+                        'size'      : winwheelPercentToDegrees(9.0909),
+                    },
+                    {
+                        'fillStyle' : '#FF8A65',
+                        'text'      : 'Spicy Chip',
+                        'size'      : winwheelPercentToDegrees(9.0909),
+                    },
+                    {
+                        'fillStyle' : '#FFF176',
+                        'text'      : 'Pull on Standard Banner',
+                        'size'      : winwheelPercentToDegrees(9.0909),
                     }
                 ],
                 'animation' :           // Specify the animation to use.
@@ -86,7 +131,10 @@
             // Called from Click of the Spin button.
             function calculatePrize()
             {
-                stopAt = Math.floor(1 + (Math.random() * 35))
+                let minimum = 33;
+                let maximum = 359;
+
+                var stopAt = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 
                 // Important thing is to set the stopAngle of the animation before stating the spin.
                 theWheel.animation.stopAngle = stopAt;
